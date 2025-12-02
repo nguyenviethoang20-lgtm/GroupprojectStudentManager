@@ -8,5 +8,15 @@ namespace studenmanager.Code.Models
 {
     internal class ClassRoom
     {
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public ClassRoom() { }
+
+        public ClassRoom(string name, int age)
+        {
+            Name = name;
+            Age = age;
+        }
     }
 }

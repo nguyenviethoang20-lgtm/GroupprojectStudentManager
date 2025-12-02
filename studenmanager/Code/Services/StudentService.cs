@@ -8,5 +8,6 @@ namespace studenmanager.Code.Services
 {
     internal class StudentService
     {
+
     }
 }
