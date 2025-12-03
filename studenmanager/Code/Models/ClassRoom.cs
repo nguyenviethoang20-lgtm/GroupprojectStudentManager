@@ -8,15 +8,24 @@ namespace studenmanager.Code.Models
 {
     internal class ClassRoom
     {
+        public string MSSV { get; set; }
         public string Name { get; set; }
-        public int Age { get; set; }
+      
+        
+        public string ClassName { get; set; }
+        public double Point { get; set; }
 
         public ClassRoom() { }
 
-        public ClassRoom(string name, int age)
+        public ClassRoom(string name, string mssv,double point,string classname )
         {
             Name = name;
-            Age = age;
+            Point = point;
+            MSSV = mssv;
+            ClassName = classname;
+
+
+
         }
     }
 }

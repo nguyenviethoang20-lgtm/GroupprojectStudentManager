@@ -20,13 +20,30 @@ namespace studenmanager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentForm studentForm = new StudentForm();
-            studentForm.Show();
+           if (txtname.Text == "nhom3" && txtpassword.Text == "12345")
+            {
+                StudentForm studentForm = new StudentForm();
+                studentForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtname.Clear();
+                txtpassword.Clear();
+            }
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
