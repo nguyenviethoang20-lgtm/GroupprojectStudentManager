@@ -53,6 +53,9 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btntangdan = new System.Windows.Forms.Button();
             this.lblDiemTB = new System.Windows.Forms.Label();
+            this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.btnLammoi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -228,7 +231,7 @@
             // 
             // btnCapnhat
             // 
-            this.btnCapnhat.Location = new System.Drawing.Point(1150, 241);
+            this.btnCapnhat.Location = new System.Drawing.Point(1133, 194);
             this.btnCapnhat.Name = "btnCapnhat";
             this.btnCapnhat.Size = new System.Drawing.Size(75, 78);
             this.btnCapnhat.TabIndex = 24;
@@ -238,7 +241,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1310, 254);
+            this.btnXoa.Location = new System.Drawing.Point(1312, 194);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 82);
             this.btnXoa.TabIndex = 25;
@@ -248,7 +251,7 @@
             // 
             // btntangdan
             // 
-            this.btntangdan.Location = new System.Drawing.Point(456, 407);
+            this.btntangdan.Location = new System.Drawing.Point(1171, 451);
             this.btntangdan.Name = "btntangdan";
             this.btntangdan.Size = new System.Drawing.Size(75, 69);
             this.btntangdan.TabIndex = 26;
@@ -259,18 +262,48 @@
             // lblDiemTB
             // 
             this.lblDiemTB.AutoSize = true;
-            this.lblDiemTB.Location = new System.Drawing.Point(631, 448);
+            this.lblDiemTB.Location = new System.Drawing.Point(1289, 477);
             this.lblDiemTB.Name = "lblDiemTB";
             this.lblDiemTB.Size = new System.Drawing.Size(98, 16);
             this.lblDiemTB.TabIndex = 27;
             this.lblDiemTB.Text = "Điểm trung bình";
             this.lblDiemTB.Click += new System.EventHandler(this.lblDiemTB_Click);
             // 
+            // xtraScrollableControl1
+            // 
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(1260, 451);
+            this.xtraScrollableControl1.Name = "xtraScrollableControl1";
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(75, 23);
+            this.xtraScrollableControl1.TabIndex = 28;
+            // 
+            // btnTimkiem
+            // 
+            this.btnTimkiem.Location = new System.Drawing.Point(1219, 334);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimkiem.TabIndex = 29;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // btnLammoi
+            // 
+            this.btnLammoi.Location = new System.Drawing.Point(1352, 331);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(75, 69);
+            this.btnLammoi.TabIndex = 30;
+            this.btnLammoi.Text = "Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
+            this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 622);
+            this.Controls.Add(this.btnLammoi);
+            this.Controls.Add(this.btnTimkiem);
+            this.Controls.Add(this.xtraScrollableControl1);
             this.Controls.Add(this.lblDiemTB);
             this.Controls.Add(this.btntangdan);
             this.Controls.Add(this.btnXoa);
@@ -330,5 +363,8 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btntangdan;
         private System.Windows.Forms.Label lblDiemTB;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
+        private System.Windows.Forms.Button btnTimkiem;
+        private System.Windows.Forms.Button btnLammoi;
     }
 }

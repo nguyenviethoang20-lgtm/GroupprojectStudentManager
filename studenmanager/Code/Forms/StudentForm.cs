@@ -51,16 +51,18 @@ namespace studenmanager.Code.Forms
             {
                 comboBox1.Items.AddRange(new string[] { "Nam", "Nữ", "Khác" });
             }
-            comboBox2.Enabled = false;
-       
-           comboBox3.Items.Clear();
+
+            comboBox2.Items.Clear();
+            comboBox2.Items.AddRange(new string[] { "Giỏi", "Khá", "Trung Bình", "Yếu" });
+
+            comboBox3.Items.Clear();
             comboBox3.Items.Add("2025-2026");
             comboBox3.SelectedIndex = 0;
             comboBox3.Enabled = false;
 
             comboBox1.SelectedItem = null;
-            
-        
+
+
             LoadStudentData();
         }
 
@@ -104,8 +106,8 @@ namespace studenmanager.Code.Forms
             double Diem;
             if (!double.TryParse(txtPoint.Text.Trim(),
            System.Globalization.NumberStyles.Any,
-           System.Globalization.CultureInfo.InvariantCulture, out Diem)|| Diem < 0 || Diem > 10)
-           
+           System.Globalization.CultureInfo.InvariantCulture, out Diem) || Diem < 0 || Diem > 10)
+
             {
                 MessageBox.Show("Vui lòng nhập điểm hợp lệ.",
                                 "Lỗi Nhập Liệu",
@@ -184,8 +186,11 @@ namespace studenmanager.Code.Forms
                 return "Giỏi";
             else if (diem >= 6.5)
                 return "Khá";
+            else if (diem >= 5.0)
+                return "Trung Bình";
             else
-                return "Trung bình";
+                return "Yếu";
+
         }
         private void txtMaSV_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -209,22 +214,22 @@ namespace studenmanager.Code.Forms
         private void txtTenSV_TextChanged(object sender, EventArgs e)
         {
             if (isFormatting) return;
-            isFormatting= true;
-            int cursor= txtTenSV.SelectionStart;
+            isFormatting = true;
+            int cursor = txtTenSV.SelectionStart;
             string text = txtTenSV.Text;
             text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ");
             text = text.TrimStart();
             text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
             txtTenSV.Text = text;
-            txtTenSV.SelectionStart=Math.Min(cursor, txtTenSV.Text.Length);
-            isFormatting= false;
+            txtTenSV.SelectionStart = Math.Min(cursor, txtTenSV.Text.Length);
+            isFormatting = false;
         }
 
         private void txtPoint_TextChanged(object sender, EventArgs e)
         {
-            if(double.TryParse(txtPoint.Text,out double diem))
+            if (double.TryParse(txtPoint.Text, out double diem))
             {
-                if (diem<0 || diem > 10)
+                if (diem < 0 || diem > 10)
                 {
                     comboBox2.SelectedIndex = -1;
 
@@ -234,10 +239,11 @@ namespace studenmanager.Code.Forms
                     string loai = XepLoai(diem);
                     comboBox2.SelectedItem = loai;
                 }
-               
-                
+
+
             }
-            else {
+            else
+            {
                 comboBox2.SelectedIndex = -1;
             }
 
@@ -424,7 +430,7 @@ namespace studenmanager.Code.Forms
 
         private void txtTenSV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(char.IsLetter(e.KeyChar))
+            if (char.IsLetter(e.KeyChar))
                 return;
             if (char.IsControl(e.KeyChar))
                 return;
@@ -438,7 +444,7 @@ namespace studenmanager.Code.Forms
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvStudentList.CurrentRow==null)
+            if (dgvStudentList.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn sinh viên để xóa.",
                                 "Lỗi",
@@ -452,7 +458,7 @@ namespace studenmanager.Code.Forms
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
-                {
+            {
                 Student sv = studentList.Find(s => s.MSSV == maSV);
                 if (sv != null)
                 {
@@ -474,13 +480,13 @@ namespace studenmanager.Code.Forms
 
 
 
-                } 
+                }
             }
         }
 
         private void btntangdan_Click(object sender, EventArgs e)
         {
-            studentList= studentList.OrderBy(s => s.Điểm).ToList();
+            studentList = studentList.OrderBy(s => s.Điểm).ToList();
             LoadStudentData();
             HienThiDiemTrungBinh();
 
@@ -501,5 +507,91 @@ namespace studenmanager.Code.Forms
             lblDiemTB.Text = $"Điểm Trung Bình: {diemTB:F2}";
         }
 
+        private void btnTimkiem_Click(object sender, EventArgs e)
+        {
+            LoadFromFile();
+            if (studentList.Count == 0)
+            {
+                MessageBox.Show("Danh sách sinh viên đang trống.");
+                return;
+            }
+            IEnumerable<Student> result = studentList;
+            if (!string.IsNullOrWhiteSpace(txtMaSV.Text))
+            {
+                result = result.Where(s => s.MSSV.Contains(txtMaSV.Text.Trim()));
+
+            }
+            if (!string.IsNullOrWhiteSpace(txtTenSV.Text))
+            {
+                string key = txtTenSV.Text.Trim().ToLower();
+                result = result.Where(s => s.Tên.ToLower().Contains(key));
+            }
+            if (!string.IsNullOrWhiteSpace(txtLop.Text))
+            {
+                string lop = txtLop.Text.Trim().ToLower();
+                result = result.Where(s => s.Lớp.ToLower().Contains(lop));
+            }
+            if (comboBox1.SelectedIndex != -1)
+            {
+                string gt = comboBox1.SelectedItem.ToString();
+                result = result.Where(s => s.GiớiTính == gt);
+            }
+            if (comboBox2.SelectedIndex != -1)
+            {
+                string loai = comboBox2.SelectedItem.ToString();
+                result = result.Where(s => s.Loại == loai);
+            }
+            if (comboBox3.SelectedIndex != -1)
+            {
+                string nam = comboBox3.SelectedItem.ToString();
+                result = result.Where(s => s.Năm == nam);
+            }
+            if (!string.IsNullOrWhiteSpace(txtPoint.Text))
+            {
+                if (double.TryParse(txtPoint.Text, out double diem))
+                {
+                    result = result.Where(s => s.Điểm == diem);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập điểm hợp lệ để tìm kiếm.",
+                                    "Lỗi Nhập Liệu",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    return;
+                }
+
+            }
+            var list = result.OrderBy(s => s.MSSV).ToList();
+            dgvStudentList.DataSource = null;
+            dgvStudentList.DataSource = list;
+            MessageBox.Show($"Đã tìm thấy {list.Count} sinh viên phù hợp.",
+                            "Kết Quả Tìm Kiếm",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
+
+        private void btnLammoi_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn làm mới danh sách sinh viên? Mọi thay đổi chưa lưu sẽ bị mất.",
+                                                  "Xác Nhận Làm Mới",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
+            if (result == DialogResult.No) return;
+            studentList.Clear();
+            dgvStudentList.DataSource = null;
+            LoadFromFile();
+            string filepath = @"D:\baitapnhomsoftware\clone2\student.txt";
+            if (File.Exists(filepath))
+            {
+                File.WriteAllText(filepath, "");
+            }
+            lblDiemTB.Text = "Điểm Trung Bình: 0";
+            MessageBox.Show("Đã làm mới danh sách sinh viên.",
+                            "Làm Mới",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+        }
     }
 }
