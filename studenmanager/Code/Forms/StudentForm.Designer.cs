@@ -35,7 +35,6 @@
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.txtLop = new System.Windows.Forms.TextBox();
-            this.dgvStudentList = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPoint = new System.Windows.Forms.TextBox();
@@ -46,11 +45,13 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnsua = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
+            this.dgvStudentList = new System.Windows.Forms.DataGridView();
+            this.btnCapnhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,20 +105,9 @@
             this.txtLop.Size = new System.Drawing.Size(55, 22);
             this.txtLop.TabIndex = 6;
             // 
-            // dgvStudentList
-            // 
-            this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentList.Location = new System.Drawing.Point(-5, 36);
-            this.dgvStudentList.Name = "dgvStudentList";
-            this.dgvStudentList.RowHeadersWidth = 51;
-            this.dgvStudentList.RowTemplate.Height = 24;
-            this.dgvStudentList.Size = new System.Drawing.Size(1103, 339);
-            this.dgvStudentList.TabIndex = 7;
-            this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
-            // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(1276, 309);
+            this.btnThem.Location = new System.Drawing.Point(1295, 90);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(158, 66);
             this.btnThem.TabIndex = 8;
@@ -163,9 +153,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
             this.comboBox1.Location = new System.Drawing.Point(527, 6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(40, 24);
@@ -174,10 +161,6 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Giỏi",
-            "Khá",
-            "Trung Bình"});
             this.comboBox2.Location = new System.Drawing.Point(1125, 6);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
@@ -195,22 +178,20 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "2025-2026"});
             this.comboBox3.Location = new System.Drawing.Point(1326, 6);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(108, 24);
             this.comboBox3.TabIndex = 19;
             // 
-            // button1
+            // btnsua
             // 
-            this.button1.Location = new System.Drawing.Point(1288, 197);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 66);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Sửa sinh viên";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnsua.Location = new System.Drawing.Point(1133, 90);
+            this.btnsua.Name = "btnsua";
+            this.btnsua.Size = new System.Drawing.Size(113, 66);
+            this.btnsua.TabIndex = 20;
+            this.btnsua.Text = "Sửa sinh viên";
+            this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // label8
             // 
@@ -229,14 +210,36 @@
             this.dateTimePicker1.TabIndex = 23;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // dgvStudentList
+            // 
+            this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentList.Location = new System.Drawing.Point(-5, 36);
+            this.dgvStudentList.Name = "dgvStudentList";
+            this.dgvStudentList.RowHeadersWidth = 51;
+            this.dgvStudentList.RowTemplate.Height = 24;
+            this.dgvStudentList.Size = new System.Drawing.Size(1103, 339);
+            this.dgvStudentList.TabIndex = 7;
+            this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
+            // 
+            // btnCapnhat
+            // 
+            this.btnCapnhat.Location = new System.Drawing.Point(1150, 241);
+            this.btnCapnhat.Name = "btnCapnhat";
+            this.btnCapnhat.Size = new System.Drawing.Size(75, 78);
+            this.btnCapnhat.TabIndex = 24;
+            this.btnCapnhat.Text = "Cập Nhật";
+            this.btnCapnhat.UseVisualStyleBackColor = true;
+            this.btnCapnhat.Click += new System.EventHandler(this.btnCapnhat_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 622);
+            this.Controls.Add(this.btnCapnhat);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnsua);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox2);
@@ -256,8 +259,8 @@
             this.Name = "StudentForm";
             this.Text = "StudentForm";
             this.Load += new System.EventHandler(this.StudentForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +274,6 @@
         private System.Windows.Forms.TextBox txtTenSV;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.TextBox txtLop;
-        private System.Windows.Forms.DataGridView dgvStudentList;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPoint;
@@ -282,8 +284,10 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnsua;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dgvStudentList;
+        private System.Windows.Forms.Button btnCapnhat;
     }
 }
