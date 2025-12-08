@@ -56,6 +56,8 @@
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.btnLammoi = new System.Windows.Forms.Button();
+            this.btnThongke = new System.Windows.Forms.Button();
+            this.btnQuaylai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -271,9 +273,10 @@
             // 
             // xtraScrollableControl1
             // 
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(1260, 451);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(1575, 564);
+            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(75, 23);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(94, 29);
             this.xtraScrollableControl1.TabIndex = 28;
             // 
             // btnTimkiem
@@ -296,11 +299,33 @@
             this.btnLammoi.UseVisualStyleBackColor = true;
             this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
             // 
+            // btnThongke
+            // 
+            this.btnThongke.Location = new System.Drawing.Point(440, 421);
+            this.btnThongke.Name = "btnThongke";
+            this.btnThongke.Size = new System.Drawing.Size(75, 99);
+            this.btnThongke.TabIndex = 31;
+            this.btnThongke.Text = "Thông kê";
+            this.btnThongke.UseVisualStyleBackColor = true;
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
+            // 
+            // btnQuaylai
+            // 
+            this.btnQuaylai.Location = new System.Drawing.Point(654, 437);
+            this.btnQuaylai.Name = "btnQuaylai";
+            this.btnQuaylai.Size = new System.Drawing.Size(88, 83);
+            this.btnQuaylai.TabIndex = 32;
+            this.btnQuaylai.Text = "Quay lại";
+            this.btnQuaylai.UseVisualStyleBackColor = true;
+            this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 622);
+            this.Controls.Add(this.btnQuaylai);
+            this.Controls.Add(this.btnThongke);
             this.Controls.Add(this.btnLammoi);
             this.Controls.Add(this.btnTimkiem);
             this.Controls.Add(this.xtraScrollableControl1);
@@ -366,5 +391,7 @@
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.Button btnLammoi;
+        private System.Windows.Forms.Button btnThongke;
+        private System.Windows.Forms.Button btnQuaylai;
     }
 }

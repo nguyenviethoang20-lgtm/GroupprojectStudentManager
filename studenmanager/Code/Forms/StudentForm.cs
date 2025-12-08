@@ -169,7 +169,7 @@ namespace studenmanager.Code.Forms
             txtPoint.Clear();
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
-            comboBox3.SelectedIndex = -1;
+            comboBox3.SelectedIndex = 0;
 
             txtMaSV.Focus();
 
@@ -368,7 +368,7 @@ namespace studenmanager.Code.Forms
         }
         private void savefile()
         {
-            string filepath = @"D:\baitapnhomsoftware\clone2\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
             using (StreamWriter writer = new StreamWriter(filepath))
             {
                 foreach (var student in studentList)
@@ -388,7 +388,7 @@ namespace studenmanager.Code.Forms
         }
         private void LoadFromFile()
         {
-            string filepath = @"D:\baitapnhomsoftware\clone2\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
             if (!File.Exists(filepath))
             {
                 MessageBox.Show("File student.txt không tồn tại.",
@@ -582,7 +582,7 @@ namespace studenmanager.Code.Forms
             studentList.Clear();
             dgvStudentList.DataSource = null;
             LoadFromFile();
-            string filepath = @"D:\baitapnhomsoftware\clone2\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
             if (File.Exists(filepath))
             {
                 File.WriteAllText(filepath, "");
@@ -592,6 +592,29 @@ namespace studenmanager.Code.Forms
                             "Làm Mới",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+        }
+
+        private void btnThongke_Click(object sender, EventArgs e)
+        {
+            FormThongKe f= new FormThongKe(studentList);
+            this.Hide();
+            f.FormClosed += (s, args) => this.Show();
+            f.Show();
+
+
+
+
+
+
+
+        }
+
+        private void btnQuaylai_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+            this.Hide();
+            
         }
     }
 }
