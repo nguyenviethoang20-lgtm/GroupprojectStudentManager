@@ -58,6 +58,8 @@
             this.btnLammoi = new System.Windows.Forms.Button();
             this.btnThongke = new System.Windows.Forms.Button();
             this.btnQuaylai = new System.Windows.Forms.Button();
+            this.btnLuufile = new System.Windows.Forms.Button();
+            this.btnDocfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -273,10 +275,10 @@
             // 
             // xtraScrollableControl1
             // 
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(1575, 564);
-            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(1969, 705);
+            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(94, 29);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(118, 36);
             this.xtraScrollableControl1.TabIndex = 28;
             // 
             // btnTimkiem
@@ -319,11 +321,33 @@
             this.btnQuaylai.UseVisualStyleBackColor = true;
             this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
+            // btnLuufile
+            // 
+            this.btnLuufile.Location = new System.Drawing.Point(105, 497);
+            this.btnLuufile.Name = "btnLuufile";
+            this.btnLuufile.Size = new System.Drawing.Size(75, 75);
+            this.btnLuufile.TabIndex = 33;
+            this.btnLuufile.Text = "Lưu file";
+            this.btnLuufile.UseVisualStyleBackColor = true;
+            this.btnLuufile.Click += new System.EventHandler(this.btnLuufile_Click_1);
+            // 
+            // btnDocfile
+            // 
+            this.btnDocfile.Location = new System.Drawing.Point(291, 497);
+            this.btnDocfile.Name = "btnDocfile";
+            this.btnDocfile.Size = new System.Drawing.Size(75, 75);
+            this.btnDocfile.TabIndex = 34;
+            this.btnDocfile.Text = "Đọc file";
+            this.btnDocfile.UseVisualStyleBackColor = true;
+            this.btnDocfile.Click += new System.EventHandler(this.btnDocfile_Click);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 622);
+            this.Controls.Add(this.btnDocfile);
+            this.Controls.Add(this.btnLuufile);
             this.Controls.Add(this.btnQuaylai);
             this.Controls.Add(this.btnThongke);
             this.Controls.Add(this.btnLammoi);
@@ -393,5 +417,7 @@
         private System.Windows.Forms.Button btnLammoi;
         private System.Windows.Forms.Button btnThongke;
         private System.Windows.Forms.Button btnQuaylai;
+        private System.Windows.Forms.Button btnLuufile;
+        private System.Windows.Forms.Button btnDocfile;
     }
 }

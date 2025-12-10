@@ -46,7 +46,7 @@ namespace studenmanager.Code.Forms
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
-            LoadFromFile();
+           
             if (comboBox1.Items.Count == 0)
             {
                 comboBox1.Items.AddRange(new string[] { "Nam", "Nữ", "Khác" });
@@ -159,7 +159,7 @@ namespace studenmanager.Code.Forms
 
             };
             studentList.Add(newStudent);
-            savefile();
+            
 
             LoadStudentData();
 
@@ -509,7 +509,7 @@ namespace studenmanager.Code.Forms
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
-            LoadFromFile();
+            
             if (studentList.Count == 0)
             {
                 MessageBox.Show("Danh sách sinh viên đang trống.");
@@ -582,11 +582,7 @@ namespace studenmanager.Code.Forms
             studentList.Clear();
             dgvStudentList.DataSource = null;
             LoadFromFile();
-            string filepath = @"D:\baitapnhomsoftware\clone6\student.txt";
-            if (File.Exists(filepath))
-            {
-                File.WriteAllText(filepath, "");
-            }
+           
             lblDiemTB.Text = "Điểm Trung Bình: 0";
             MessageBox.Show("Đã làm mới danh sách sinh viên.",
                             "Làm Mới",
@@ -615,6 +611,16 @@ namespace studenmanager.Code.Forms
             f.Show();
             this.Hide();
             
+        }
+
+        private void btnLuufile_Click_1(object sender, EventArgs e)
+        {
+            savefile();
+        }
+
+        private void btnDocfile_Click(object sender, EventArgs e)
+        {
+            LoadFromFile();
         }
     }
 }
