@@ -368,7 +368,7 @@ namespace studenmanager.Code.Forms
         }
         private void savefile()
         {
-            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clone6\student.txt";
             using (StreamWriter writer = new StreamWriter(filepath))
             {
                 foreach (var student in studentList)
@@ -388,7 +388,7 @@ namespace studenmanager.Code.Forms
         }
         private void LoadFromFile()
         {
-            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clone6\student.txt";
             if (!File.Exists(filepath))
             {
                 MessageBox.Show("File student.txt không tồn tại.",
@@ -582,7 +582,7 @@ namespace studenmanager.Code.Forms
             studentList.Clear();
             dgvStudentList.DataSource = null;
             LoadFromFile();
-            string filepath = @"D:\baitapnhomsoftware\clon5\student.txt";
+            string filepath = @"D:\baitapnhomsoftware\clone6\student.txt";
             if (File.Exists(filepath))
             {
                 File.WriteAllText(filepath, "");

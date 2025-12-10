@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDiemTB = new System.Windows.Forms.Label();
             this.lblKha = new System.Windows.Forms.Label();
@@ -41,24 +43,10 @@
             this.lblNam = new System.Windows.Forms.Label();
             this.lblYeu = new System.Windows.Forms.Label();
             this.btnQuaylai = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvThongKe
-            // 
-            this.dgvThongKe.AllowUserToAddRows = false;
-            this.dgvThongKe.AllowUserToDeleteRows = false;
-            this.dgvThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongKe.Location = new System.Drawing.Point(49, 12);
-            this.dgvThongKe.Name = "dgvThongKe";
-            this.dgvThongKe.ReadOnly = true;
-            this.dgvThongKe.RowHeadersWidth = 51;
-            this.dgvThongKe.RowTemplate.Height = 24;
-            this.dgvThongKe.Size = new System.Drawing.Size(1147, 542);
-            this.dgvThongKe.TabIndex = 0;
-            this.dgvThongKe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongKe_CellContentClick);
             // 
             // groupBox1
             // 
@@ -180,27 +168,41 @@
             this.btnQuaylai.UseVisualStyleBackColor = true;
             this.btnQuaylai.Click += new System.EventHandler(this.btnQuaylai_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(82, 0);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(1019, 568);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
+            // 
             // FormThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 618);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnQuaylai);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvThongKe);
             this.Name = "FormThongKe";
             this.Text = "Thongke";
             this.Load += new System.EventHandler(this.Thongke_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvThongKe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblKha;
         private System.Windows.Forms.Label lblKhongdat;
@@ -213,5 +215,6 @@
         private System.Windows.Forms.Label lblNu;
         private System.Windows.Forms.Label lblDiemTB;
         private System.Windows.Forms.Button btnQuaylai;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

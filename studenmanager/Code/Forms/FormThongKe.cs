@@ -16,7 +16,7 @@ namespace studenmanager.Code.Forms
     public partial class FormThongKe : Form
     {
         public List<StudentForm.Student> students;
-        public FormThongKe(List<StudentForm.Student>list)
+        public FormThongKe(List<StudentForm.Student> list)
         {
             InitializeComponent();
             students = list;
@@ -26,7 +26,7 @@ namespace studenmanager.Code.Forms
         {
 
         }
-        
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -35,14 +35,15 @@ namespace studenmanager.Code.Forms
 
         private void Thongke_Load(object sender, EventArgs e)
         {
-            
+
             students = students.OrderBy(s => s.Điểm).ToList();
-            
-            dgvThongKe.DataSource = students;
+            BieuDo();
+
             HienThiThongKe();
+            
 
         }
-        private void HienThiThongKe ()
+        private void HienThiThongKe()
         {
             lblTong.Text = "Tổng số sinh viên: " + students.Count;
             lblGioi.Text = "Số sinh viên giỏi: " + students.Count(s => s.Điểm >= 8);
@@ -54,7 +55,7 @@ namespace studenmanager.Code.Forms
             lblDat.Text = "Số sinh viên đạt: " + students.Count(s => s.Điểm >= 5);
 
             lblKhongdat.Text = "Số sinh viên không đạt: " + students.Count(s => s.Điểm < 5);
-            if(students.Count>0)
+            if (students.Count > 0)
                 lblDiemTB.Text = "Điểm trung bình: " + (students.Average(s => s.Điểm)).ToString("0.00");
             else
                 lblDiemTB.Text = "Điểm trung bình: 0";
@@ -70,5 +71,26 @@ namespace studenmanager.Code.Forms
             this.Hide();
 
         }
+        private void BieuDo()
+        {
+            chart1.Series.Clear();
+            chart1.ChartAreas.Clear();
+            chart1.ChartAreas.Add(new ChartArea("MainArea"));
+            Series series = new Series("Số lượng sinh viên");
+            series.ChartType = SeriesChartType.Column;
+            series.IsValueShownAsLabel = true;
+            int gioi = students.Count(s => s.Điểm >= 8);
+            int kha = students.Count(s => s.Điểm >= 6.5 && s.Điểm < 8);
+            int tb = students.Count(s => s.Điểm >= 5 && s.Điểm < 6.5);
+            int yeu = students.Count(s => s.Điểm < 5);
+            series.Points.AddXY("Giỏi", gioi);
+            series.Points.AddXY("Khá", kha);
+            series.Points.AddXY("Trung Bình", tb);
+            series.Points.AddXY("Yếu", yeu);
+            chart1.Series.Add(series);
+            chart1.Titles.Clear();
+            chart1.Titles.Add("Biểu đồ phân loại sinh viên theo điểm");
+        }
+       
     }
 }

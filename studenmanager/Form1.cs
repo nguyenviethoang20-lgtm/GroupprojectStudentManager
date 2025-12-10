@@ -20,7 +20,7 @@ namespace studenmanager
 
         private void button1_Click(object sender, EventArgs e)
         {
-           if (txtname.Text == "nhom3" && txtpassword.Text == "12345")
+           if (txtname.Text == "nhom6" && txtpassword.Text == "12345")
             {
                 StudentForm studentForm = new StudentForm();
                 studentForm.Show();
