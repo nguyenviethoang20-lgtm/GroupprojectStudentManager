@@ -111,14 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Slides\" />
-    <Folder Include="Test\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Docs\Design.txt" />
-    <Content Include="Docs\Report.txt" />
-    <Content Include="Docs\SRS.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

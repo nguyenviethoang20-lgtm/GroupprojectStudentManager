@@ -101,7 +101,7 @@ namespace studenmanager.Code.Forms
                                 MessageBoxIcon.Warning);
                 return;
             }
-            string tenSV = txtTenSV.Text.Trim();   // kiểm tra đúng textbox
+            string tenSV = txtTenSV.Text.Trim();   
             string lop = txtLop.Text.Trim();
             double Diem;
             if (!double.TryParse(txtPoint.Text.Trim(),
@@ -463,7 +463,7 @@ namespace studenmanager.Code.Forms
                 if (sv != null)
                 {
                     studentList.Remove(sv);
-                    savefile();
+                    
                     LoadStudentData();
                     MessageBox.Show("Đã xóa sinh viên thành công!",
                                     "Thông báo",

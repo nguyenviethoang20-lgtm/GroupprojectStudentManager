@@ -60,6 +60,7 @@
             this.btnQuaylai = new System.Windows.Forms.Button();
             this.btnLuufile = new System.Windows.Forms.Button();
             this.btnDocfile = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -119,9 +120,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(1295, 90);
+            this.btnThem.Location = new System.Drawing.Point(1143, 112);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(158, 66);
+            this.btnThem.Size = new System.Drawing.Size(113, 66);
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm sinh viên";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -197,7 +198,7 @@
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(1133, 90);
+            this.btnsua.Location = new System.Drawing.Point(1143, 194);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(113, 66);
             this.btnsua.TabIndex = 20;
@@ -225,19 +226,19 @@
             // dgvStudentList
             // 
             this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentList.Location = new System.Drawing.Point(-5, 36);
+            this.dgvStudentList.Location = new System.Drawing.Point(15, 112);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.RowHeadersWidth = 51;
             this.dgvStudentList.RowTemplate.Height = 24;
-            this.dgvStudentList.Size = new System.Drawing.Size(1103, 339);
+            this.dgvStudentList.Size = new System.Drawing.Size(1103, 476);
             this.dgvStudentList.TabIndex = 7;
             this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
             // 
             // btnCapnhat
             // 
-            this.btnCapnhat.Location = new System.Drawing.Point(1133, 194);
+            this.btnCapnhat.Location = new System.Drawing.Point(1287, 276);
             this.btnCapnhat.Name = "btnCapnhat";
-            this.btnCapnhat.Size = new System.Drawing.Size(75, 78);
+            this.btnCapnhat.Size = new System.Drawing.Size(113, 67);
             this.btnCapnhat.TabIndex = 24;
             this.btnCapnhat.Text = "Cập Nhật";
             this.btnCapnhat.UseVisualStyleBackColor = true;
@@ -245,9 +246,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(1312, 194);
+            this.btnXoa.Location = new System.Drawing.Point(1287, 112);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 82);
+            this.btnXoa.Size = new System.Drawing.Size(113, 66);
             this.btnXoa.TabIndex = 25;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -255,9 +256,9 @@
             // 
             // btntangdan
             // 
-            this.btntangdan.Location = new System.Drawing.Point(1171, 451);
+            this.btntangdan.Location = new System.Drawing.Point(1287, 364);
             this.btntangdan.Name = "btntangdan";
-            this.btntangdan.Size = new System.Drawing.Size(75, 69);
+            this.btntangdan.Size = new System.Drawing.Size(113, 67);
             this.btntangdan.TabIndex = 26;
             this.btntangdan.Text = "Sắp xếp điểm tăng dần";
             this.btntangdan.UseVisualStyleBackColor = true;
@@ -266,26 +267,27 @@
             // lblDiemTB
             // 
             this.lblDiemTB.AutoSize = true;
-            this.lblDiemTB.Location = new System.Drawing.Point(1289, 477);
+            this.lblDiemTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiemTB.Location = new System.Drawing.Point(1164, 66);
             this.lblDiemTB.Name = "lblDiemTB";
-            this.lblDiemTB.Size = new System.Drawing.Size(98, 16);
+            this.lblDiemTB.Size = new System.Drawing.Size(127, 20);
             this.lblDiemTB.TabIndex = 27;
             this.lblDiemTB.Text = "Điểm trung bình";
             this.lblDiemTB.Click += new System.EventHandler(this.lblDiemTB_Click);
             // 
             // xtraScrollableControl1
             // 
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(1969, 705);
-            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(2461, 881);
+            this.xtraScrollableControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(118, 36);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(148, 45);
             this.xtraScrollableControl1.TabIndex = 28;
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(1219, 334);
+            this.btnTimkiem.Location = new System.Drawing.Point(1143, 276);
             this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimkiem.Size = new System.Drawing.Size(113, 67);
             this.btnTimkiem.TabIndex = 29;
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.UseVisualStyleBackColor = true;
@@ -293,9 +295,9 @@
             // 
             // btnLammoi
             // 
-            this.btnLammoi.Location = new System.Drawing.Point(1352, 331);
+            this.btnLammoi.Location = new System.Drawing.Point(1287, 191);
             this.btnLammoi.Name = "btnLammoi";
-            this.btnLammoi.Size = new System.Drawing.Size(75, 69);
+            this.btnLammoi.Size = new System.Drawing.Size(113, 69);
             this.btnLammoi.TabIndex = 30;
             this.btnLammoi.Text = "Làm mới";
             this.btnLammoi.UseVisualStyleBackColor = true;
@@ -303,9 +305,9 @@
             // 
             // btnThongke
             // 
-            this.btnThongke.Location = new System.Drawing.Point(440, 421);
+            this.btnThongke.Location = new System.Drawing.Point(1143, 362);
             this.btnThongke.Name = "btnThongke";
-            this.btnThongke.Size = new System.Drawing.Size(75, 99);
+            this.btnThongke.Size = new System.Drawing.Size(113, 69);
             this.btnThongke.TabIndex = 31;
             this.btnThongke.Text = "Thông kê";
             this.btnThongke.UseVisualStyleBackColor = true;
@@ -313,9 +315,9 @@
             // 
             // btnQuaylai
             // 
-            this.btnQuaylai.Location = new System.Drawing.Point(654, 437);
+            this.btnQuaylai.Location = new System.Drawing.Point(1143, 530);
             this.btnQuaylai.Name = "btnQuaylai";
-            this.btnQuaylai.Size = new System.Drawing.Size(88, 83);
+            this.btnQuaylai.Size = new System.Drawing.Size(257, 58);
             this.btnQuaylai.TabIndex = 32;
             this.btnQuaylai.Text = "Quay lại";
             this.btnQuaylai.UseVisualStyleBackColor = true;
@@ -323,9 +325,9 @@
             // 
             // btnLuufile
             // 
-            this.btnLuufile.Location = new System.Drawing.Point(105, 497);
+            this.btnLuufile.Location = new System.Drawing.Point(1287, 447);
             this.btnLuufile.Name = "btnLuufile";
-            this.btnLuufile.Size = new System.Drawing.Size(75, 75);
+            this.btnLuufile.Size = new System.Drawing.Size(113, 67);
             this.btnLuufile.TabIndex = 33;
             this.btnLuufile.Text = "Lưu file";
             this.btnLuufile.UseVisualStyleBackColor = true;
@@ -333,19 +335,30 @@
             // 
             // btnDocfile
             // 
-            this.btnDocfile.Location = new System.Drawing.Point(291, 497);
+            this.btnDocfile.Location = new System.Drawing.Point(1143, 447);
             this.btnDocfile.Name = "btnDocfile";
-            this.btnDocfile.Size = new System.Drawing.Size(75, 75);
+            this.btnDocfile.Size = new System.Drawing.Size(113, 67);
             this.btnDocfile.TabIndex = 34;
             this.btnDocfile.Text = "Đọc file";
             this.btnDocfile.UseVisualStyleBackColor = true;
             this.btnDocfile.Click += new System.EventHandler(this.btnDocfile_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(455, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(233, 25);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Student Manager App";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1465, 622);
+            this.ClientSize = new System.Drawing.Size(1435, 632);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnDocfile);
             this.Controls.Add(this.btnLuufile);
             this.Controls.Add(this.btnQuaylai);
@@ -419,5 +432,6 @@
         private System.Windows.Forms.Button btnQuaylai;
         private System.Windows.Forms.Button btnLuufile;
         private System.Windows.Forms.Button btnDocfile;
+        private System.Windows.Forms.Label label9;
     }
 }
